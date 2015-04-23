@@ -1,4 +1,4 @@
-import sys
+import sys,os
 
 def test_input():
 	name = raw_input('plese enter your name:')
@@ -9,6 +9,19 @@ def test_params():
 	print sys.argv[0]
 	print sys.argv[1]
 
+def cur_dir():
+	path = sys.path[0]
+	print path
+	
+	if os.path.isdir(path):
+		print 'is dir'
+		return path
+	elif os.path.isfile(path):
+		print 'is file'
+		return os.path.dirname(path)
+	else:
+		print 'something wrong'
+	
 def calc_static_cycle_count(select_str):
 	range_tuple=('0-99', '100-199', '200-299', '300-399', '400-499', '500-599', '600-699', '700-799', '800-899', '900-999', 
 	'1000-1499', '1500-1999', '2000-2999', '3000-3999', '4000-4999', '5000-5999', '6000-6999', '7000-7999', '8000-8999', '9000-9999', 
@@ -51,5 +64,6 @@ def calc_static_cycle_count(select_str):
 def main():
 	test_params()
 	test_input()
-	
+	cur_dir()
+
 main()

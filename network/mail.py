@@ -3,7 +3,7 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
 sendfrom = "havenyang@viatech.com.cn"
-sendtolist = ['havenyang@viatech.com.cn']
+sendtolist = ['havenyang@viatech.com.cn','havenyang@126.com']
 
 message = """
 hello python mail 
@@ -19,7 +19,10 @@ att1['Content-Type'] = 'application/octet-stream'
 att1['Content-Disposition'] = 'attachment; filename = "123.txt"'
 msg.attach(att1)
 
-msg.set_payload(message)
+att2 = MIMEText(message, 'base64', 'gb2312')
+att2['Content-Type'] = 'text'
+#att2['Content-Disposition'] = 'payload'
+msg.attach(att2)
 
 msg['subject'] = 'dingdong'
 

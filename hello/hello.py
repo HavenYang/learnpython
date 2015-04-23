@@ -1,17 +1,13 @@
+import sys
 
-#print "plese enter your name:"
-#name = raw_input()
-#print "aha your name is " + name
+def test_input():
+	name = raw_input('plese enter your name:')
+	print "aha your name is " + name
 
-#a = 'ABC'
-#b = a + 'hehe'
-#a = 'XYZ'
-#print b
-
-#import sys
-#print sys.argc
-#print $(notdir sys.argv[0])
-#print sys.argv[1]
+def test_params():
+	print len(sys.argv)
+	print sys.argv[0]
+	print sys.argv[1]
 
 def calc_static_cycle_count(select_str):
 	range_tuple=('0-99', '100-199', '200-299', '300-399', '400-499', '500-599', '600-699', '700-799', '800-899', '900-999', 
@@ -53,6 +49,7 @@ def calc_static_cycle_count(select_str):
 	fn.close()
 	
 def main():
-	calc_static_cycle_count('in.txt')
+	test_params()
+	test_input()
 	
 main()
